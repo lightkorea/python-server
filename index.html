@@ -1,0 +1,20 @@
+<!-- index.html (웹 페이지) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리버스 쉘 명령어 실행</title>
+</head>
+<body>
+    <h1>리버스 쉘 명령어 실행</h1>
+    <form action="/execute" method="post">
+        <textarea name="command" rows="4" cols="50" placeholder="명령어를 입력하세요..."></textarea><br>
+        <button type="submit">명령어 실행</button>
+    </form>
+
+    <h3>실행 결과</h3>
+    <pre>{{ result }}</pre>
+</body>
+</html>
